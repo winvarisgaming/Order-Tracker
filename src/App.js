@@ -51,7 +51,7 @@ function App() {
 
       setOrders(customerOrders);
     } catch (error) {
-      setErrorMessage("เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์");
+      setErrorMessage(error);
       setOrders([]);
     }
   };
