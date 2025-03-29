@@ -23,13 +23,13 @@ function App() {
     try {
       // Step 1: Get today's date range (00:00 - 23:59 UTC)
       const today = new Date();
-      const from = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0)).toISOString();
+      const from = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()-25, 0, 0, 0)).toISOString();
       const to = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59)).toISOString();
 
       // Step 2: Get all transactions for today
       const transactionsResponse = await api.get(`/transactions?from=${from}&to=${to}&includeOnline=true`);
       if (!transactionsResponse.data || transactionsResponse.data.length === 0) {
-        setErrorMessage("ไม่พบรายการสั่งซื้อของลูกค้า1");
+        setErrorMessage("ยังไม่พบออเดอร์ไดๆ กรุณาติดต่อแอดมิน");
         return;
       }
 
@@ -44,7 +44,7 @@ function App() {
       //console.log(transactionsResponse.data.filter(order => order.contactDetail.phone));
 
       if (customerOrders.length < 1) {
-        setErrorMessage("ไม่พบรายการสั่งซื้อของลูกค้า2");
+        setErrorMessage("ไม่พบรายการสั่งซื้อของคุณลูกค้า");
         setOrders([]);
         return;
       }
