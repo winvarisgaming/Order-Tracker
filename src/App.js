@@ -44,7 +44,7 @@ function App() {
       //console.log(transactionsResponse.data.filter(order => order.contactDetail.phone));
 
       if (customerOrders.length < 1) {
-        setErrorMessage("ไม่พบรายการสั่งซื้อของคุณลูกค้า");
+        setErrorMessage("ไม่พบรายการสั่งซื้อ");
         setOrders([]);
         return;
       }
