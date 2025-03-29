@@ -23,7 +23,7 @@ function App() {
     try {
       // Step 1: Get today's date range (00:00 - 23:59 UTC)
       const today = new Date();
-      const from = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()-25, 0, 0, 0)).toISOString();
+      const from = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()-5, 0, 0, 0)).toISOString();
       const to = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59)).toISOString();
 
       // Step 2: Get all transactions for today
